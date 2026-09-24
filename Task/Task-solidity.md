@@ -2,10 +2,6 @@
 
 Use this list to check the basic setup and Solidity workflow. After the chain tasks pass, verify everything in the frontend. Do not add a separate Solidity unit-test suite for this evaluation.
 
-**Deadline: 1.5 hour**
-
-Expected: 60–90 minutes for a senior developer. Over 2 hour without a pass counts as incomplete.
-
 ## 1. Basic environment
 
 - [ ] Node.js 20+ (`node -v`)
@@ -47,11 +43,30 @@ Do these in the browser after deploy. Each step should produce a MetaMask transa
 - [ ] Marketplace and Explorer also show the same asset
 - [ ] Asset card / dashboard shows an on-chain token id (number), not only `demo-...`
 
-## 5. Pass / fail
+## 5. Security review
 
-**Pass:** compile and deploy work, then a wallet user can create an asset in the UI and see it on Dashboard / Marketplace.
+Identify **1–2** contract or web3 security issues or risks in the existing code.
 
-**Fail:** compile/deploy error, empty `contracts.json`, MetaMask on the wrong chain, or tokenize only saves a local `demo-` asset while contracts are deployed.
+Create `SECURITY.md`. For each issue, briefly explain what you found, risk level, why it matters, and how you would fix it. You do not need to fix every issue.
+
+- [ ] `SECURITY.md` has 1–2 issues
+
+## Evaluation
+
+We will review:
+
+* Understanding of the existing Solidity and Hardhat setup
+* Compile and local deploy
+* `contracts.json` addresses after deploy
+* Wallet / MetaMask on Hardhat Local
+* Whether create-asset works on-chain in the existing UI
+* Security awareness
+
+**Pass:** compile and deploy work, a wallet user can create an asset in the UI and see it on Dashboard / Marketplace, and `SECURITY.md` has 1–2 issues.
+
+**We are not expecting a complete production protocol.**
+
+The goal is to see how you work with the existing contracts, deploy them locally, and prove the flow in the existing frontend.
 
 ## Commands
 
